@@ -1,4 +1,5 @@
 import { useTheme } from "../ThemeContext";
+
 const Title = ({ children }) => {
   const { theme } = useTheme();
   return (

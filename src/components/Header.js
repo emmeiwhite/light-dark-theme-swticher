@@ -1,5 +1,5 @@
 import Title from "../components/Title";
-import Switch from "./Switch";
+import Switch from "../Switch";
 
 const Header = () => {
   return (
