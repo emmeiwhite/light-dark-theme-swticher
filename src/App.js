@@ -2,7 +2,8 @@ import "./App.css";
 import { ThemeProvider, useTheme } from "./ThemeContext";
 
 import Header from "./components/Header";
-import Page from "./pages/page";
+import ExpenseTracker from "./pages/ExpenseTracker";
+import Page from "./pages/Page";
 
 function App() {
   const { theme } = useTheme();
@@ -15,6 +16,9 @@ function App() {
     >
       <Header />
       <Page />
+
+      {/* --- Revisiting useReducer() Hook --- */}
+      <ExpenseTracker />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 
 // This is our Context
 const ThemeContext = createContext(undefined);
@@ -14,10 +14,9 @@ export const ThemeProvider = ({ children }) => {
     });
   };
 
+  const value = { theme, toggleTheme };
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 };
 

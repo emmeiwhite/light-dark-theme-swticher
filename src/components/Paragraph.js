@@ -7,7 +7,9 @@ const Paragraph = ({ children }) => {
     <div style={{ color: theme === "light" ? "black" : "white" }}>
       <p>{children}</p>
 
-      <p style={{ fontSize: "2rem" }}>Current Theme is {theme}</p>
+      <p style={{ fontSize: "2rem" }}>
+        Current Theme is <strong>{theme}</strong>
+      </p>
     </div>
   );
 };
