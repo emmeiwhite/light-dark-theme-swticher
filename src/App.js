@@ -2,6 +2,7 @@ import "./App.css";
 import { ThemeProvider, useTheme } from "./ThemeContext";
 
 import Header from "./components/Header";
+import CustomDayTracker from "./pages/CustomDayTracker";
 import ExpenseTracker from "./pages/ExpenseTracker";
 import Page from "./pages/Page";
 
@@ -19,6 +20,9 @@ function App() {
 
       {/* --- Revisiting useReducer() Hook --- */}
       <ExpenseTracker />
+
+      {/* --- Tracking Work Days with Custom Hook --- */}
+      <CustomDayTracker />
     </div>
   );
 }
