@@ -9,11 +9,19 @@ const Row = ({ children }) => {
 };
 --- */
 
-const Row = ({ children }) => {
+const Row = ({ children, spacing }) => {
+  const childStyle = {
+    marginLeft: `${spacing}px`,
+  };
   return (
     <div className="row">
       {React.Children.map(children, (child, index) => {
-        return child;
+        return React.cloneElement(child, {
+          style: {
+            ...child.props.style,
+            ...(index > 0 ? childStyle : {}),
+          },
+        });
       })}
     </div>
   );
@@ -22,7 +30,7 @@ export default function LiveOrders() {
   return (
     <div>
       <h3>Delving Deep into JSX World!</h3>
-      <Row>
+      <Row spacing={40}>
         <p>Margeretta</p>
         <p>Quanity 2</p>
         <p>4.3 USD</p>
