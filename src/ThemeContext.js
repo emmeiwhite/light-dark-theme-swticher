@@ -6,6 +6,7 @@ const ThemeContext = createContext(undefined);
 export const ThemeProvider = ({ children }) => {
   // Global State
   const [theme, setTheme] = useState("light");
+  const [showAlert, setShowAlert] = useState(false);
 
   // Business Logic Handled Here!
   const toggleTheme = () => {
@@ -14,7 +15,7 @@ export const ThemeProvider = ({ children }) => {
     });
   };
 
-  const value = { theme, toggleTheme };
+  const value = { theme, toggleTheme, showAlert, setShowAlert };
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
