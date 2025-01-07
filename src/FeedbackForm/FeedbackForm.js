@@ -2,27 +2,27 @@ import { useState } from "react";
 import "./Styles.css";
 import { useTheme } from "../ThemeContext";
 
-export default function FeedbackForm() {
-  const { theme } = useTheme();
+export default function FeedbackForm({ onSubmit }) {
+  // const { theme } = useTheme();
   const [score, setScore] = useState(10);
   const [comment, setComment] = useState("");
 
-  const isDisabled = Number(score) <= 5 && comment.length <= 10;
+  const isDisabled = Number(score) < 5 && comment.length <= 10;
   const placeholderText = isDisabled
     ? "What went wrong, kindly let us know and we can look into it"
     : "Optional Feedback";
 
   const rangeValues = [...Array(10).keys()].map((i) => i + 1);
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-  }
-
+    onSubmit({ score, comment });
+  };
   return (
     <form
       onSubmit={handleSubmit}
       className="feedback-form"
-      style={{ color: theme === "light" ? "black" : "white" }}
+      // style={{ color: theme === "light" ? "black" : "white" }}
     >
       <h1>Feedback Form</h1>
 
@@ -49,7 +49,7 @@ export default function FeedbackForm() {
       </datalist>
 
       <div className="field">
-        <label htmlFor="comment">Comment: </label>
+        <label htmlFor="comment">Comments: </label>
         <textarea
           name="comment"
           id="comment"

@@ -7,10 +7,14 @@ import ExpenseTracker from "./pages/ExpenseTracker";
 import Page from "./pages/Page";
 import Alert from "./Alert";
 import LiveOrders from "./LiveOrders";
-import FeedbackForm from "./FeedbackForm";
+import FeedbackForm from "./FeedbackForm/FeedbackForm";
 
 function App() {
   const { theme, setShowAlert } = useTheme();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div
       className="App"
@@ -50,7 +54,7 @@ function App() {
       {/* <LiveOrders /> */}
 
       {/* --- FeedBackForm --- */}
-      <FeedbackForm />
+      <FeedbackForm onSubmit={handleSubmit} />
     </div>
   );
 }
