@@ -1,5 +1,6 @@
 import React from "react";
 import "./Style.css";
+import { useTheme } from "../ThemeContext";
 
 // The row class sets everything in flex one line, we need to add space!
 // Let's use React.CloneElement & React.Children functions
@@ -27,8 +28,9 @@ const Row = ({ children, spacing }) => {
   );
 };
 export default function LiveOrders() {
+  const { theme } = useTheme();
   return (
-    <div>
+    <div style={{ color: theme === "light" ? "black" : "white" }}>
       <h3>Delving Deep into JSX World!</h3>
       <Row spacing={40}>
         <p>Margeretta</p>
@@ -37,6 +39,13 @@ export default function LiveOrders() {
         <p>With Toppings</p>
         <p>18:30 pm</p>
       </Row>
+
+      {/* Test Question: */}
+      <h4>TESTING!</h4>
+      <div>{false}</div>
+      <div>{undefined}</div>
+      <div>{null}</div>
+      <div>{() => true}</div>
     </div>
   );
 }
