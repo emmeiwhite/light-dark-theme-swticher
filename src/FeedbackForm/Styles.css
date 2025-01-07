@@ -1,0 +1,31 @@
+.feedback-form {
+  padding: 1rem 2rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+}
+
+textarea {
+  width: 400px;
+  height: 180px;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: orange;
+  color: white;
+  display: inline-block;
+  margin-top: 1rem;
+  border: none;
+  width: 200px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(210, 137, 0);
+}
+
+button[type="submit"]:disabled {
+  background-color: rgb(163, 163, 167);
+  cursor: not-allowed;
+}

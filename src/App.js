@@ -7,6 +7,7 @@ import ExpenseTracker from "./pages/ExpenseTracker";
 import Page from "./pages/Page";
 import Alert from "./Alert";
 import LiveOrders from "./LiveOrders";
+import FeedbackForm from "./FeedbackForm";
 
 function App() {
   const { theme, setShowAlert } = useTheme();
@@ -21,12 +22,12 @@ function App() {
       <Page />
 
       {/* --- Revisiting useReducer() Hook --- */}
-      <ExpenseTracker />
+      {/* <ExpenseTracker /> */}
 
       {/* --- Tracking Work Days with Custom Hook --- */}
-      <CustomDayTracker />
+      {/* <CustomDayTracker /> */}
 
-      {/* --- Component Composition --- */}
+      {/* --- Component Composition
       <Alert>
         <h4>Delete Account</h4>
 
@@ -39,12 +40,17 @@ function App() {
         </button>
       </Alert>
 
+
       <button className="btn-del" onClick={() => setShowAlert(true)}>
         Unsubscribe
       </button>
 
+       --- */}
       {/* --- LiveOrders --- */}
-      <LiveOrders />
+      {/* <LiveOrders /> */}
+
+      {/* --- FeedBackForm --- */}
+      <FeedbackForm />
     </div>
   );
 }
