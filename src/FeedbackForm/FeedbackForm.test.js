@@ -39,4 +39,15 @@ describe("Feedback Form", () => {
       comment: "",
     });
   });
+
+  // Let's try one more simple test
+  test("User is not able to submit the form if the score is less than 5", () => {
+    const score = "4";
+    const handleSubmit = jest.fn();
+
+    render(<FeedbackForm onSubmit={handleSubmit} />);
+
+    const rangeInput = screen.getByLabelText(/Score:/);
+    fireEvent.change(rangeInput, { target: { value: score } });
+  });
 });
